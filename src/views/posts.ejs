@@ -1,0 +1,30 @@
+<section id="app">
+  <h2>Posts</h2>
+  <ul>
+    <li v-for="post in posts"><a :href="`/${post.Id}/post`">{{ post.Title }}</a></li>
+  </ul>
+</section>
+
+<script>
+  var http = axios.create({
+    baseURL: "<%- apiUrl%>",
+    timeout: 10000,
+  });
+
+  var app = new Vue({
+    el: "#app",
+    data: {
+      posts: [],
+    },
+    methods: {
+      loadPosts() {
+        http.get("/posts").then((response) => {
+          this.posts = response.data;
+        });
+      },
+    },
+    mounted() {
+      this.loadPosts();
+    },
+  });
+</script>
