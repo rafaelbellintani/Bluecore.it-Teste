@@ -6,8 +6,9 @@ module.exports = class CommentRepository {
     const result = await database
       .select(
         'Id',
-        'User',
-        'Content',
+        'PostId',
+        'UserName',
+        'Comment',
         'CreatedAt',
         'UpdatedAt'
       )
@@ -20,8 +21,9 @@ module.exports = class CommentRepository {
     const result = await database
       .select(
         'Id',
-        'Use',
-        'Content',
+        'PostId',
+        'UserName',
+        'Comment',
         'CreatedAt',
         'UpdatedAt'
       )
