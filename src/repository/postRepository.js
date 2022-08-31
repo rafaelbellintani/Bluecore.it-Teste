@@ -1,7 +1,6 @@
 const database = require('../config/database')
 
 module.exports = class PostRepository {
-
   static async list () {
     const result = await database
       .select(
@@ -28,7 +27,7 @@ module.exports = class PostRepository {
       .from('Posts')
       .where({ 'Posts.Id': id })
       .first()
-      
+
     return result
   }
 }
