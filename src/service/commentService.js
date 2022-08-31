@@ -6,7 +6,7 @@ module.exports = class CommentService {
     return await CommentRepository.list()
   }
 
-  static async listById (id) {
-    return await CommentRepository.listById(id)
+  static async listByPostId (id) {
+    return await CommentRepository.listByPostId(id)
   }
 }

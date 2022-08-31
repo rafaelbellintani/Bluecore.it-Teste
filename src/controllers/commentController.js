@@ -8,8 +8,8 @@ module.exports = class CommentController {
       .catch(next)
   }
 
-  static listById (request, response, next) {
-    CommentService.listById(request.params.id)
+  static listByPostId (request, response, next) {
+    CommentService.listByPostId(request.params.postid)
       .then((unities) => response.status(200).send(unities))
       .catch(next)
   }

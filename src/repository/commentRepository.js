@@ -17,7 +17,7 @@ module.exports = class CommentRepository {
     return result
   }
 
-  static async listById (id) {
+  static async listByPostId (id) {
     const result = await database
       .select(
         'Id',
@@ -28,8 +28,7 @@ module.exports = class CommentRepository {
         'UpdatedAt'
       )
       .from('Comments')
-      .where({ 'Comments.Id': id })
-      .first()
+      .where({ 'Comments.PostId': id })
     return result
   }
 }

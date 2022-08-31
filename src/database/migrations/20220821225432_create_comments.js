@@ -3,10 +3,10 @@ const table = 'Comments'
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.up = function(knex) {
+exports.up = function (knex) {
     return knex.schema.createTable(table, (table) => {
         table.increments('Id')
-        table.integer('PostId').unsigned()        
+        table.integer('PostId').unsigned()
         table.string('UserName', 255).notNullable()
         table.text('Comment', 'mediumtext').notNullable()
         table.datetime('CreatedAt').defaultTo(knex.fn.now())
@@ -20,6 +20,6 @@ exports.up = function(knex) {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function(knex) {
+exports.down = function (knex) {
     return knex.schema.dropTable(table)
 };

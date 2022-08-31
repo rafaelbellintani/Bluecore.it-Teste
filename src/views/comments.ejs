@@ -3,12 +3,12 @@
   <h1>{{post.Title}}</h1>
   <p>{{post.Content}}</p>
   <br>
-  <h3>Comentários</h3>
+  <h3>Comentários ({{ comments.length }})</h3>
   <ul>
-    <!-- Utilize looping v-for do VueJs para exibir os comentários (título e conteúdo) de forma dinâmica -->
-    <li>
-      <h5>Autor Comentario 1</h5>
-      <p>Conteúdo do comentário 1</p>
+    <li v-for="comment in comments">
+      <h5>{{ comment.UserName }}</h5>
+      <p>{{ comment.Comment }}</p>
+      <span>Feito em: {{ comment.CreatedAt }}</span>
     </li>
   </ul>
 </section>
@@ -35,11 +35,16 @@
       loadComments() {
         //TODO: Criar função que realiza a chamada na API retornando os comentários pelo id do post
         //para usar o id do post utilize a constate postId criada a cima
+        http.get("/comments/" + postId).then((response) => {
+          this.comments = response.data;
+          console.log(response)
+        });
       }
     },
     mounted() {
       this.loadPost();
-      //TODO: Faça a chamada da função que carrega os comentários
+      // TODO: Faça a chamada da função que carrega os comentários
+      this.loadComments();
     },
   });
 </script>
