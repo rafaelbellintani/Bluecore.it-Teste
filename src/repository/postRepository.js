@@ -30,4 +30,14 @@ module.exports = class PostRepository {
 
     return result
   }
+
+  static async insertPost (newPost) {
+    await database
+      .insert(
+        {
+          Title: newPost.title,
+          Content: newPost.content
+        }
+      ).into('Posts')
+  }
 }

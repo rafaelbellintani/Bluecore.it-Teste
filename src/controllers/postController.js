@@ -12,4 +12,12 @@ module.exports = class PostController {
       .then((unities) => response.status(200).send(unities))
       .catch(next)
   }
+
+  static insertPost (request, response, next) {
+    PostService.insertPost(request.body)
+      .then((unities) => {
+        response.status(200).redirect('/')
+      })
+      .catch(next)
+  }
 }

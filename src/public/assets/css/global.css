@@ -9,6 +9,25 @@ body {
   overflow: auto !important;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.new-post {
+  margin: 0 auto;
+}
+
+.new-post-container {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .container {
   width: 760px;
   margin: 0 auto;

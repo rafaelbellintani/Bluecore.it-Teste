@@ -15,7 +15,7 @@ module.exports = class CommentController {
   }
 
   static insertComment (request, response, next) {
-    CommentService.insertPost(request.body)
+    CommentService.insertComment(request.body)
       .then((unities) => {
         response.status(200).redirect(`/${request.body.postId}/post`)
       })

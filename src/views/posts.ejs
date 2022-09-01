@@ -5,6 +5,14 @@
   </ul>
 </section>
 
+<section class="new-post-container">
+  <form action="/api/posts" method="post" class="new-post">
+    <input id="title" name="title" placeholder="Nome do Post">
+    <textarea id="content" name="content" placeholder="Digite algo sobre o post..."></textarea>
+    <button class="button">Criar Post</button>
+  </form>
+</section>
+
 <script>
   var http = axios.create({
     baseURL: "<%- apiUrl%>",

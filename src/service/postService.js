@@ -8,4 +8,8 @@ module.exports = class PostService {
   static async listById (id) {
     return await PostRepository.listById(id)
   }
+
+  static async insertPost (post) {
+    return await PostRepository.insertPost(post)
+  }
 }
