@@ -17,10 +17,13 @@
       <button class="button" type="submit">Postar</button>
     </form>
     <ul>
-      <li class="comment" v-for="comment in comments">
+      <li class="comment" v-for="comment in comments" v-if="comments">
         <h5>{{ comment.UserName }}</h5>
         <p>{{ comment.Comment }}</p>
         <span>Feito em: {{ comment.CreatedAt }}</span>
+      </li>
+      <li class="comment" v-else>
+        <span>Ainda não há comentários neste post. Seja o primeiro a comentar!</span>
       </li>
     </ul>
   </div>
