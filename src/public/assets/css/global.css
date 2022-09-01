@@ -88,3 +88,30 @@ textarea {
   padding: 8px 5px;
   height: 150px;
 }
+
+.posts h2 {
+  margin: 10px;
+}
+
+.posts ul {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.posts li {
+  margin-left: 10px;
+}
+
+.posts a {
+  text-decoration: none;
+  color: rgb(119, 118, 118);
+  border: 1px rgb(119, 118, 118) solid;
+  padding: 8px 5px;
+  border-radius: 5px;
+}
+
+.posts a:hover {
+  color: rgb(194, 194, 194);
+  border-color: rgb(194, 194, 194);
+}
