@@ -5,5 +5,86 @@
 }
 
 body {
-  background-color: rgb(63, 63, 63);
+  background-color: rgb(48, 47, 47) !important;
+  overflow: auto !important;
+}
+
+.container {
+  width: 760px;
+  margin: 0 auto;
+}
+
+.button {
+  color: rgb(172, 172, 172);
+  text-decoration: none;
+  border: 3px rgb(172, 172, 172) solid;
+  padding: 8px 10px;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: transparent;
+}
+
+.button:hover {
+  color: rgb(219, 219, 219);
+  border-color: rgb(219, 219, 219);
+}
+
+.options-container {
+  display: flex;
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 150px;
+}
+
+.comment {
+  margin-bottom: 40px;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h3, h2, h4, h5, p, span {
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+
+input {
+  width: 60%;
+  background-color: transparent;
+  color: white;
+  border: 2px gray solid;
+  border-radius: 5px;
+  margin-bottom: 10px !important;
+  padding: 8px 5px;;
+}
+
+textarea {
+  width: 60%;
+  background-color: transparent;
+  color: white;
+  border: 2px gray solid;
+  border-radius: 5px;
+  margin-bottom: 10px !important;
+  padding: 8px 5px;
+  height: 150px;
 }

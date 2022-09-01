@@ -1,16 +1,30 @@
 <section id="app">
-  <a href="/"><- Voltar</a><br>
-  <h1>{{post.Title}}</h1>
-  <p>{{post.Content}}</p>
+  <div class="options-container">
+    <a class="button" href="/">Voltar</a><br>
+  </div>
+  <div class="post-container container">
+    <h1>{{post.Title}}</h1>
+    <p>{{post.Content}}</p>
+  </div>
   <br>
-  <h3>Comentários ({{ comments.length }})</h3>
-  <ul>
-    <li v-for="comment in comments">
-      <h5>{{ comment.UserName }}</h5>
-      <p>{{ comment.Comment }}</p>
-      <span>Feito em: {{ comment.CreatedAt }}</span>
-    </li>
-  </ul>
+  <div class="comments-container container">
+    <h3>Comentários ({{ comments.length }})</h3>
+    <form action="/api/comments" method="post">
+      <input name="postId" id="postId" :value="post.Id" hidden>
+      <input id="userName" name="userName" placeholder="Nome" required>
+      <textarea id="comment" name="comment" placeholder="Escreva algo..." required>
+      </textarea>
+      <button class="button" type="submit">Postar</button>
+    </form>
+    <ul>
+      <li class="comment" v-for="comment in comments">
+        <h5>{{ comment.UserName }}</h5>
+        <p>{{ comment.Comment }}</p>
+        <span>Feito em: {{ comment.CreatedAt }}</span>
+      </li>
+    </ul>
+  </div>
+  
 </section>
 
 <script>

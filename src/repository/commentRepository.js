@@ -31,4 +31,15 @@ module.exports = class CommentRepository {
       .where({ 'Comments.PostId': id })
     return result
   }
+
+  static async insertPost (newPost) {
+    await database
+      .insert(
+        {
+          PostId: newPost.postId,
+          UserName: newPost.userName,
+          Comment: newPost.comment
+        }
+      ).into('Comments')
+  }
 }
